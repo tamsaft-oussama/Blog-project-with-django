@@ -16,7 +16,7 @@
     <!-- start header -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-info">
-            <a class="navbar-brand" href="#">Tamsaft-Blog</a>
+            <a class="navbar-brand" href="{% url 'about' %}">Tamsaft-Blog</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -25,10 +25,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="{% url 'about' %}">About</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -72,12 +72,10 @@
                         </div>
                         <div class="card-body">
                             <ul class="list-unstyled">
-                                <li><a href="#">Cras justo odio</a></li>
-                                <li><a href="#">Dapibus ac facilisis in</a></li>
-                                <li><a href="#">Morbi leo risus</a></li>
-                                <li><a href="#">Porta ac consectetur ac</a></li>
-                                <li><a href="#">Vestibulum at eros</a></li>
-                              </ul>
+                                {% for post in posts %}
+                                    <li><a href="#">{{ post.title }}</a></li>
+                                {% endfor %}
+                            </ul>
                         </div>
                     </div>
                     <div class="card mb-3" style="width:100%">
