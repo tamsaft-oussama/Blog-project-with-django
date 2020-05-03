@@ -3,7 +3,7 @@
     {% for post in posts %}
         <div class="card mb-3 p-2">
             <img class="image-fluid" src="https://img-a.udemycdn.com/course/750x422/2701028_ef70_2.jpg" alt="" width="150px">
-            <h2>{{ post.title }}</h2>
+            <a href="{% url 'detail' post.id %}"><h2>{{ post.title }}</h2></a>
             <p>{{ post.content }}</p>
             <h6>Post by :{{ post.auther }} | {{ post.created_date | date:"d-m-Y h:m" }}</h6>
         </div>

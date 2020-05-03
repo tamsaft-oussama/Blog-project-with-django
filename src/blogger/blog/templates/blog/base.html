@@ -73,7 +73,7 @@
                         <div class="card-body">
                             <ul class="list-unstyled">
                                 {% for post in posts %}
-                                    <li><a href="#">{{ post.title }}</a></li>
+                                    <li><a href="{% url 'detail' post.id %}">{{ post.title }}</a></li>
                                 {% endfor %}
                             </ul>
                         </div>
